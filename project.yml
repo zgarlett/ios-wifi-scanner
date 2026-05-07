@@ -1,0 +1,30 @@
+name: WifiScanner
+options:
+  bundleIdPrefix: com.zacharygarlett
+  deploymentTarget:
+    iOS: "16.0"
+  xcodeVersion: "16.0"
+  generateEmptyDirectories: true
+
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+
+targets:
+  WifiScanner:
+    type: application
+    platform: iOS
+    sources:
+      - path: WifiScanner/Sources/WifiScanner
+    resources:
+      - path: WifiScanner/Resources
+    settings:
+      base:
+        INFOPLIST_FILE: WifiScanner/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: com.zacharygarlett.wifiscanner
+        CODE_SIGN_STYLE: Automatic
+        CODE_SIGN_IDENTITY: "Apple Development"
+        DEVELOPMENT_TEAM: N75ZGP2KK9
+        SWIFT_OBJC_BRIDGING_HEADER: WifiScanner/Sources/WifiScanner/BridgingHeader.h
+    entitlements:
+      path: WifiScanner/Resources/WifiScanner.entitlements
